@@ -1,0 +1,769 @@
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --background: #f6f8fc;
+
+    --surface: #ffffff;
+
+    --surface-secondary: #f8fafc;
+
+    --text: #111827;
+
+    --muted: #6b7280;
+
+    --border: #e5e7eb;
+
+    --primary: #635bff;
+
+    --primary-dark: #5148e5;
+
+    --secondary: #8b5cf6;
+
+    --shadow:
+        0 20px 60px rgba(15, 23, 42, 0.08);
+
+    --radius: 22px;
+}
+
+
+/* DARK MODE */
+
+[data-theme="dark"] {
+
+    --background: #080d1b;
+
+    --surface: #111827;
+
+    --surface-secondary: #172033;
+
+    --text: #f9fafb;
+
+    --muted: #aeb8ca;
+
+    --border: #273449;
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(99, 91, 255, 0.13),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(139, 92, 246, 0.12),
+            transparent 30%
+        ),
+
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    min-height: 100vh;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+button,
+input,
+select {
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.custom-navbar {
+
+    background:
+        color-mix(
+            in srgb,
+            var(--background) 85%,
+            transparent
+        );
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.navbar-brand {
+
+    color: var(--text);
+
+    font-size: 1.15rem;
+}
+
+
+.navbar-brand:hover {
+
+    color: var(--primary);
+}
+
+
+.brand-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+
+.theme-btn {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    color: var(--text);
+
+    background: var(--surface);
+}
+
+
+.theme-btn:hover {
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+
+    padding-top: 150px;
+
+    padding-bottom: 90px;
+
+    min-height: 720px;
+}
+
+
+.hero-badge {
+
+    color: var(--primary);
+
+    background:
+        rgba(99, 91, 255, 0.1);
+
+    border:
+        1px solid rgba(99, 91, 255, 0.18);
+
+    border-radius: 50px;
+
+    padding: 9px 15px;
+}
+
+
+.hero-title {
+
+    font-size:
+        clamp(
+            2.7rem,
+            6vw,
+            5rem
+        );
+
+    font-weight: 800;
+
+    letter-spacing: -0.055em;
+
+    line-height: 1.02;
+
+    color: var(--text);
+}
+
+
+.hero-title span {
+
+    display: block;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.hero-description {
+
+    max-width: 700px;
+
+    margin:
+        25px auto 0;
+
+    color: var(--muted);
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DOWNLOAD BOX
+========================================================= */
+
+.download-box {
+
+    padding: 28px;
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+
+.input-group-text {
+
+    color: var(--muted);
+
+    background: var(--surface);
+
+    border-color: var(--border);
+}
+
+
+.form-control,
+.form-select {
+
+    color: var(--text);
+
+    background: var(--surface);
+
+    border-color: var(--border);
+}
+
+
+.form-control::placeholder {
+
+    color: #9ca3af;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+
+    color: var(--text);
+
+    background: var(--surface);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 0.25rem
+        rgba(99, 91, 255, 0.12);
+}
+
+
+.btn-primary {
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(99, 91, 255, 0.2);
+}
+
+
+.btn-primary:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--secondary)
+        );
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result-card {
+
+    padding: 25px;
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    animation:
+        resultAnimation 0.4s ease;
+}
+
+
+@keyframes resultAnimation {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+/* =========================================================
+   VIDEO PREVIEW
+========================================================= */
+
+.video-preview {
+
+    position: relative;
+
+    min-height: 280px;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: #0b1220;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.video-preview video {
+
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: contain;
+
+    display: none;
+}
+
+
+.preview-placeholder {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #94a3b8;
+
+}
+
+
+.preview-placeholder i {
+
+    font-size: 4rem;
+
+    color: var(--primary);
+}
+
+
+.video-title {
+
+    color: var(--text);
+
+    font-weight: 750;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   INFO BADGES
+========================================================= */
+
+.info-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 7px 11px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 50px;
+
+    background: var(--surface-secondary);
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress {
+
+    height: 9px;
+
+    background:
+        var(--surface-secondary);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+
+    padding-bottom: 70px;
+}
+
+
+.feature-card {
+
+    height: 100%;
+
+    padding: 25px;
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 12px 35px
+        rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.feature-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+
+    color: var(--primary);
+
+    background:
+        rgba(99, 91, 255, 0.1);
+
+    font-size: 1.3rem;
+}
+
+
+.feature-card h5 {
+
+    color: var(--text);
+
+    font-weight: 700;
+}
+
+
+.feature-card p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+.history-card {
+
+    padding: 25px;
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+
+.history-list {
+
+    color: var(--muted);
+}
+
+
+.history-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.history-item strong {
+
+    color: var(--text);
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    padding:
+        25px 0;
+
+    border-top:
+        1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .hero-section {
+
+        padding-top: 125px;
+
+        padding-bottom: 60px;
+    }
+
+
+    .hero-title {
+
+        font-size: 2.8rem;
+    }
+
+
+    .download-box {
+
+        padding: 20px;
+    }
+
+
+    .input-group {
+
+        display: flex;
+
+        flex-wrap: wrap;
+    }
+
+
+    .input-group-text {
+
+        display: none;
+    }
+
+
+    .input-group .form-control {
+
+        width: 100%;
+
+        flex: 0 0 100%;
+
+        border-radius: 10px !important;
+
+        margin-bottom: 10px;
+    }
+
+
+    .input-group .btn {
+
+        width: 100%;
+
+        border-radius: 10px !important;
+    }
+
+
+    .video-preview,
+    .video-preview video {
+
+        height: 230px;
+    }
+
+
+    .history-item {
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+}
